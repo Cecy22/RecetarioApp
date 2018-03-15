@@ -1,0 +1,2 @@
+# RecetarioApp
+Aplicación movil.
