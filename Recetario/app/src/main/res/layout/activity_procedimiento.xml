@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.garey.recetario.Procedimiento"
+    android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/txtNom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:text="Nombre de la Receta" />
+
+        <TextView
+            android:id="@+id/txtPaso"
+            android:layout_below="@+id/txtNom"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            android:textSize="20sp"
+            android:text="Paso # X" />
+
+        <TextView
+            android:id="@+id/txtProc"
+            android:layout_below="@+id/txtPaso"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:text="Aqui va el procedimiento segmentado en pasos para obtener un platillo acorde a la receta que se menciona yo q se, solo debo de poner mucho texto prueba para ver si puedo justificar el texto y asi pero pues a ver que sale jajaja que botana pelicula ya la habia visto pero igual esta chida. " />
+
+    <android.support.design.widget.BottomNavigationView
+        android:id="@+id/navi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alingParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:menu="@menu/menu" />
+
+</RelativeLayout>
