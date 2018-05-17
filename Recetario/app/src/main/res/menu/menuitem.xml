@@ -3,14 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
-<item
-    android:id="@+id/Buscar"
-    android:icon="@android:drawable/ic_menu_search"
-    app:actionViewClass="android.support.v7.widget.SearchView"
-    app:showAsAction="always"
-    android:title="Buscar" />
+
+    <item
+        android:id="@+id/action_buscar"
+        android:icon="@android:drawable/ic_menu_search"
+
+        app:showAsAction="always"
+        android:title="Buscar" />
 
     <group android:checkableBehavior="single">
+
         <item
             android:id="@+id/Inicio"
             android:title="Inicio"
@@ -19,7 +21,7 @@
         <item
             android:id="@+id/Nuevo"
             android:title="Nueva Receta"
-            android:icon="@drawable/New"/>
+            android:icon="@drawable/nuevo"/>
     </group>
 
     <item android:title="">
