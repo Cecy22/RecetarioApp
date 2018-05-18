@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.garey.recetario.Inicio"
+    android:id="@+id/drawer_layout"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
@@ -25,21 +25,24 @@
 
         ></android.support.design.widget.NavigationView>
 
-
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/floatingActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_marginBottom="15dp"
             android:layout_marginStart="15dp"
             android:clickable="true"
+            app:backgroundTint="@android:color/background_light"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            app:rippleColor="@color/colorAccent"
             app:srcCompat="@drawable/chef" />
+
+
     </android.support.constraint.ConstraintLayout>
 
 </android.support.v4.widget.DrawerLayout>
