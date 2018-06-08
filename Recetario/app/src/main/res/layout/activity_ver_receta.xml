@@ -47,7 +47,7 @@
                 android:id="@+id/txtDes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Es una receta muy mona que lleva varios ingredientes los cuales estan aqui abajo ya no se que mas decir." />
+                android:text="Es una dtoReceta muy mona que lleva varios ingredientes los cuales estan aqui abajo ya no se que mas decir." />
         </LinearLayout>
     </LinearLayout>
 

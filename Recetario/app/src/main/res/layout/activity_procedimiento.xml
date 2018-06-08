@@ -38,7 +38,7 @@
             android:layout_marginTop="20dp"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:text="Aqui va el procedimiento segmentado en pasos para obtener un platillo acorde a la receta que se menciona yo q se, solo debo de poner mucho texto prueba para ver si puedo justificar el texto y asi pero pues a ver que sale jajaja que botana pelicula ya la habia visto pero igual esta chida. " />
+            android:text="Aqui va el procedimiento segmentado en pasos para obtener un platillo acorde a la dtoReceta que se menciona yo q se, solo debo de poner mucho texto prueba para ver si puedo justificar el texto y asi pero pues a ver que sale jajaja que botana pelicula ya la habia visto pero igual esta chida. " />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navi"
