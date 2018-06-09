@@ -8,8 +8,8 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public interface RetrofitInterface {
-    public static final String url= "http://10.42.0.126/ServicioWebRecetario/";//tec
-    //public static final String url = "http://192.168.1.86/ServicioWebRecetario/";//Casa
+    //public static final String url= "http://10.42.0.126/ServicioWebRecetario/";//tec
+    public static final String url = "http://192.168.1.86/ServicioWebRecetario/";//Casa
     //public static final String url = "http://192.168.43.245/ServicioWebRecetario/";//erico
 
 

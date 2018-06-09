@@ -6,14 +6,8 @@ public class DtoIngrediente {
      */
     private int IdI;
     private String Nom;
-    private String Cant;
-    private String Unidad;
 
     public DtoIngrediente() {
-    }
-
-    public DtoIngrediente(String nom) {
-        Nom = nom;
     }
 
     public int getIdI() {
@@ -32,19 +26,5 @@ public class DtoIngrediente {
         Nom = nom;
     }
 
-    public String getCant() {
-        return Cant;
-    }
 
-    public void setCant(String cant) {
-        Cant = cant;
-    }
-
-    public String getUnidad() {
-        return Unidad;
-    }
-
-    public void setUnidad(String unidad) {
-        Unidad = unidad;
-    }
 }

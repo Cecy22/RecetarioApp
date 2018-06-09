@@ -6,8 +6,7 @@
         android:title="Atras"/>
 
     <item
-       android:id="@+id/Action_Siguiente"
-       android:icon="@drawable/siguiente"
-       android:title="Siguiente" />
-
+        android:id="@+id/Action_Siguiente"
+        android:icon="@drawable/inicio"
+        android:title="Guardar y Salir" />
 </menu>

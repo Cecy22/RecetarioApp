@@ -18,7 +18,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class Adaptador  extends RecyclerView.Adapter<Adaptador.ViewHolderRecycler> implements ItemClickListener {
+public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolderRecycler> implements ItemClickListener {
 
     private final Context context;
     private List<DtoReceta> datos;
@@ -40,12 +40,15 @@ public class Adaptador  extends RecyclerView.Adapter<Adaptador.ViewHolderRecycle
     public void onBindViewHolder(ViewHolderRecycler holder, int position) {
         DtoReceta dtoReceta = datos.get(position);
         holder.titulo.setText(dtoReceta.getNombre());
-        if(dtoReceta.checkImage())
+        holder.Valor.setText(dtoReceta.getValoracion());
+        holder.Tipo.setText(dtoReceta.getTipo());
+        if (dtoReceta.checkImage())
             holder.imagen.setImageDrawable(
                     ContextCompat.getDrawable(context,
-                    dtoReceta.getImagen()));
+                            dtoReceta.getImagen()));
         else
-            Picasso.with(context).load(RetrofitInterface.url+ dtoReceta.getPathImg()).into(holder.imagen);
+            Picasso.with(context).load(dtoReceta.getPathImg())
+                    .into(holder.imagen);
     }
 
     @Override
@@ -55,7 +58,8 @@ public class Adaptador  extends RecyclerView.Adapter<Adaptador.ViewHolderRecycle
 
     @Override
     public void onItemClick(View v, int pos) {
-        Toast.makeText(context, pos , Toast.LENGTH_SHORT).show();
+        VerReceta.createInstance((Activity) context, datos.get(pos));
+
     }
 
     public static class ViewHolderRecycler extends RecyclerView.ViewHolder
@@ -63,23 +67,32 @@ public class Adaptador  extends RecyclerView.Adapter<Adaptador.ViewHolderRecycle
         @BindView(R.id.txtnombre)
         TextView titulo;
 
+        @BindView(R.id.txtValor)
+        TextView Valor;
+
+        @BindView(R.id.txtTipo)
+        TextView Tipo;
+
         @BindView(R.id.imgReceta)
         ImageView imagen;
 
+
         public ItemClickListener click;
-        public ViewHolderRecycler(View v, ItemClickListener listener){
+
+        public ViewHolderRecycler(View v, ItemClickListener listener) {
             super(v);
             ButterKnife.bind(this, v);
+            this.click = listener;
             v.setOnClickListener(this);
-            click=listener;
         }
 
         @Override
         public void onClick(View view) {
-
+            click.onItemClick(view, getAdapterPosition());
         }
     }
 }
-interface ItemClickListener{
+
+interface ItemClickListener {
     void onItemClick(View v, int pos);
 }

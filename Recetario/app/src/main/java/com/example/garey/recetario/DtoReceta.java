@@ -80,6 +80,7 @@ public class DtoReceta {
     public void setIdUsuario(int idUsuario) {
         IdUsuario = idUsuario;
     }
+
     public boolean checkImage(){
         if(getPathImg().equals("none")) {
             setImagen(R.drawable.ic_receta);

@@ -18,11 +18,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/imgReceta"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            app:srcCompat="@mipmap/ic_launcher" />
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_receta" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -44,7 +45,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/txtDes"
+                android:id="@+id/txtTipo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Es una dtoReceta muy mona que lleva varios ingredientes los cuales estan aqui abajo ya no se que mas decir." />
@@ -60,6 +61,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:isIndicator="true"
         app:layout_constraintBottom_toTopOf="@+id/btnVer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -73,12 +75,14 @@
         android:layout_marginBottom="20dp"
         android:layout_marginEnd="12dp"
         android:layout_marginStart="8dp"
+        android:onClick="Ver"
         android:text="Ver Receta"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ListView
+        android:id="@+id/ltsIngrediente"
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginBottom="30dp"

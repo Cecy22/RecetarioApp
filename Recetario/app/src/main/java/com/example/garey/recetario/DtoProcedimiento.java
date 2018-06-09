@@ -6,13 +6,8 @@ public class DtoProcedimiento {
      */
     private int IdP;
     private String Descripcion;
-    private String Nom;
 
     public DtoProcedimiento() {
-    }
-
-    public DtoProcedimiento(String nom) {
-        Nom = nom;
     }
 
     public DtoProcedimiento(int idP) {
@@ -35,11 +30,5 @@ public class DtoProcedimiento {
         Descripcion = descripcion;
     }
 
-    public String getNom() {
-        return Nom;
-    }
 
-    public void setNom(String nom) {
-        Nom = nom;
-    }
 }

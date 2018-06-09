@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -45,12 +46,10 @@ public class Inicio extends AppCompatActivity implements NavigationView.OnNaviga
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio);
-        //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Intent i = getIntent();
         usu = i.getStringExtra("Usu");
-
-       // Toast.makeText(this, usu, Toast.LENGTH_SHORT).show();
+        ButterKnife.bind(this);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -105,7 +104,7 @@ public class Inicio extends AppCompatActivity implements NavigationView.OnNaviga
     @Override
     protected void onResume() {
         super.onResume();
-        dialog = ProgressDialog.show(this, "", "Espera", true);
+        dialog = ProgressDialog.show(this, "Cargando Recetas", "Espera...", true);
         Retrofit retrofit = new Retrofit.Builder().baseUrl(RetrofitInterface.url)
                 .addConverterFactory(GsonConverterFactory.create()).build();
         RetrofitInterface request = retrofit.create(RetrofitInterface.class);

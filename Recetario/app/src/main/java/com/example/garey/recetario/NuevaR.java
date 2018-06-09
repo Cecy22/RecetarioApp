@@ -207,19 +207,26 @@ public class NuevaR extends AppCompatActivity {
         this.finish();
     }
 
-    //haz las validaciones de los text por si no entiendes q no jale si esta vacio
+
     public void guardar(View v) {
         dialog = ProgressDialog.show(this, "", "Guardando.....", true);
         AddReceta(v);
+
         int ti, tp;
         ti = Ingrediente.size();
-        for (int i = 0; i < ti; i++) {
-            AddIngrediente(Ingrediente.get(i));
+        for (String item : Ingrediente) {
+            if (item != "" && item != null)
+            AddIngrediente(item);
         }
 
         tp = Procedimientos.size();
-        for (int i = 0; i < tp; i++) {
-            AddProcedimiento(Procedimientos.get(i));
+        for (String item : Procedimientos) {
+            if (item != "" && item != null)
+                AddProcedimiento(item);
+            else
+                Log.e("PRESIONO", item);
+
+
         }
         dialog.dismiss();
         closeActivity();

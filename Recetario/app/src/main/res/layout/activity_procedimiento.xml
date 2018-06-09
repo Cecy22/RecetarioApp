@@ -4,41 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.garey.recetario.Procedimiento"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    tools:context="com.example.garey.recetario.Procedimiento">
 
-        <TextView
-            android:id="@+id/txtNom"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="35dp"
-            android:textStyle="bold"
-            android:textSize="25sp"
-            android:text="Nombre de la Receta" />
+    <TextView
+        android:id="@+id/txtNom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="35dp"
+        android:text="Nombre de la Receta"
+        android:textSize="35sp"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txtPaso"
-            android:layout_below="@+id/txtNom"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="italic"
-            android:textSize="20sp"
-            android:text="Paso # X" />
+    <TextView
+        android:id="@+id/txtPaso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtNom"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="50dp"
+        android:text="Paso # X"
+        android:textSize="22sp"
+        android:textStyle="italic" />
 
-        <TextView
-            android:id="@+id/txtProc"
-            android:layout_below="@+id/txtPaso"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:text="Aqui va el procedimiento segmentado en pasos para obtener un platillo acorde a la dtoReceta que se menciona yo q se, solo debo de poner mucho texto prueba para ver si puedo justificar el texto y asi pero pues a ver que sale jajaja que botana pelicula ya la habia visto pero igual esta chida. " />
+    <TextView
+        android:id="@+id/txtProc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtPaso"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:text="Aqui va el procedimiento segmentado en pasos para obtener un platillo acorde a la dtoReceta que se menciona yo q se, solo debo de poner mucho texto prueba para ver si puedo justificar el texto y asi pero pues a ver que sale jajaja que botana pelicula ya la habia visto pero igual esta chida. " />
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navi"
