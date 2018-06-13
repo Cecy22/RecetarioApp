@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,7 +41,8 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolderRecycler
     public void onBindViewHolder(ViewHolderRecycler holder, int position) {
         DtoReceta dtoReceta = datos.get(position);
         holder.titulo.setText(dtoReceta.getNombre());
-        holder.Valor.setText(dtoReceta.getValoracion());
+        //holder.Valor.setText(dtoReceta.getValoracion());
+        holder.val.setRating(Float.parseFloat(dtoReceta.getValoracion()));
         holder.Tipo.setText(dtoReceta.getTipo());
         if (dtoReceta.checkImage())
             holder.imagen.setImageDrawable(
@@ -67,14 +69,14 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.ViewHolderRecycler
         @BindView(R.id.txtnombre)
         TextView titulo;
 
-        @BindView(R.id.txtValor)
-        TextView Valor;
-
         @BindView(R.id.txtTipo)
         TextView Tipo;
 
         @BindView(R.id.imgReceta)
         ImageView imagen;
+
+        @BindView(R.id.ratingBar)
+        RatingBar val;
 
 
         public ItemClickListener click;

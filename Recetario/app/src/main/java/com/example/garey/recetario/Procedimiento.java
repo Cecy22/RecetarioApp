@@ -35,7 +35,7 @@ public class Procedimiento extends AppCompatActivity {
     @BindView(R.id.txtProc)
     TextView Procedimiento;
 
-    int idr, cont = 0, t;
+    int idr, cont = 0, t, idU;
     List<DtoProcedimiento> lista;
     ProgressDialog dialog;
 
@@ -69,6 +69,7 @@ public class Procedimiento extends AppCompatActivity {
         Intent i = getIntent();
         Titulo.setText(i.getStringExtra("nom"));
         idr = i.getIntExtra("id", -1);
+        idU = i.getIntExtra("usu", -1);
         VerListaProcesos();
 
 
@@ -96,7 +97,6 @@ public class Procedimiento extends AppCompatActivity {
                         | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
     }
 
-
     public void next() {
         cont++;
         if (cont < t) {
@@ -107,6 +107,7 @@ public class Procedimiento extends AppCompatActivity {
             cont--;
             i.putExtra("id", idr);
             i.putExtra("nom", Titulo.getText().toString());
+            i.putExtra("usu", idU);
             startActivity(i);
         }
     }
@@ -124,7 +125,7 @@ public class Procedimiento extends AppCompatActivity {
     }
 
     public void VerListaProcesos() {
-        dialog = ProgressDialog.show(this, "Cargando Recetas", "Espera...", true);
+        dialog = ProgressDialog.show(this, "Cargando Procedimiento", "Espera...", true);
         Retrofit retrofit = new Retrofit.Builder().baseUrl(RetrofitInterface.url)
                 .addConverterFactory(GsonConverterFactory.create()).build();
         RetrofitInterface request = retrofit.create(RetrofitInterface.class);

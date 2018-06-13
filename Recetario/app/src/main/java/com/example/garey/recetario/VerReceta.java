@@ -116,6 +116,7 @@ public class VerReceta extends AppCompatActivity {
         Intent i = new Intent(this, Procedimiento.class);
         i.putExtra("id", idr);
         i.putExtra("nom", Receta.getText().toString());
+        i.putExtra("usu", idU);
         startActivity(i);
     }
 

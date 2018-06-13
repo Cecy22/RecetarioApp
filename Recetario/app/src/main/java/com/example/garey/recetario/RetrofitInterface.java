@@ -2,16 +2,20 @@ package com.example.garey.recetario;
 
 import java.util.List;
 
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Multipart;
 import retrofit2.http.POST;
+import retrofit2.http.Part;
 import retrofit2.http.Query;
 
 public interface RetrofitInterface {
     //public static final String url= "http://10.42.0.126/ServicioWebRecetario/";//tec
     public static final String url = "http://192.168.1.86/ServicioWebRecetario/";//Casa
     //public static final String url = "http://192.168.43.245/ServicioWebRecetario/";//erico
-
+    //public static final String url = "http://192.168.1.10/ServicioWebRecetario/";//Cacahuate
 
     @POST("ValidaUsuario.php")
     Call<List<DtoUsuario>> validaLogin(@Query("usu") String usu, @Query("pass") String pass);
@@ -33,6 +37,9 @@ public interface RetrofitInterface {
                                @Query("fnac") String fnac, @Query("pass") String pass,
                                @Query("img") String img);
 
+    @POST("ValorarReceta.php")
+    Call<DtoResult> Valorar(@Query("idr") int idr, @Query("valor") float Valor);
+
     @POST("InsertarReceta.php")
     Call<DtoResult> addReceta(@Query("nom") String nom, @Query("Tipo") String Tipo,
                               @Query("Valor") int Valor, @Query("img") int img,
@@ -42,5 +49,12 @@ public interface RetrofitInterface {
     Call<DtoResult> addIngrediente(@Query("nom") String nom);
 
     @POST("InsertarProcedimiento.php")
-    Call<DtoResult> addProcedimiento( @Query("des") String des);
+    Call<DtoResult> addProcedimiento(@Query("des") String des);
+
+   /* @Multipart
+    @POST("examples")
+    Call<ExampleResponse> createExample(@Part MultipartBody.Part image,
+                                        @Part("description") RequestBody description);
+
+*/
 }

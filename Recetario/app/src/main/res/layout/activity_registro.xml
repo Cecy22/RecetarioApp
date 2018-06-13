@@ -13,6 +13,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="25dp"
+        android:onClick="tomarFoto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -63,17 +64,19 @@
 
     <Button
         android:id="@+id/btnReg"
-        style="@android:style/Widget.Material.Light.Button.Small"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        style="@android:style/Widget.Material.Light.Button.Borderless.Colored"
+        android:layout_width="0dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="25dp"
         android:onClick="AddUsuario"
         android:text="Registrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtContra" />
+        app:layout_constraintTop_toBottomOf="@+id/txtContra"
+        tools:targetApi="lollipop" />
+
 
     <EditText
         android:id="@+id/txtFnac"

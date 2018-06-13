@@ -178,6 +178,7 @@ public class NuevaR extends AppCompatActivity {
             @Override
             public void onFailure(Call<DtoResult> call, Throwable t) {
                 Toast.makeText(NuevaR.this, "Server not found", Toast.LENGTH_LONG).show();
+                Log.e("El error es:   ", t.getMessage());
             }
         });
     }
@@ -199,6 +200,7 @@ public class NuevaR extends AppCompatActivity {
             @Override
             public void onFailure(Call<DtoResult> call, Throwable t) {
                 Toast.makeText(NuevaR.this, "Server not found", Toast.LENGTH_LONG).show();
+                Log.e("El error es:   ", t.getMessage());
             }
         });
     }
@@ -216,7 +218,7 @@ public class NuevaR extends AppCompatActivity {
         ti = Ingrediente.size();
         for (String item : Ingrediente) {
             if (item != "" && item != null)
-            AddIngrediente(item);
+                AddIngrediente(item);
         }
 
         tp = Procedimientos.size();
@@ -225,8 +227,6 @@ public class NuevaR extends AppCompatActivity {
                 AddProcedimiento(item);
             else
                 Log.e("PRESIONO", item);
-
-
         }
         dialog.dismiss();
         closeActivity();
